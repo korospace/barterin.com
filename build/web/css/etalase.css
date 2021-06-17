@@ -1,0 +1,451 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Jun 14, 2021, 10:34:33 AM
+    Author     : elkorospace
+*/
+*{
+    margin: 0;
+    padding: 0;
+}
+
+html,body{
+    height: 100vh;
+    overflow-x: hidden;
+}
+
+body,nav,nav .logo-wraper,nav .link-wraper,main,main section,#section-form form{
+    display: flex;
+}
+body,nav,nav .logo-wraper,nav .link-wraper,main,main section,#section-form form{
+    box-sizing: border-box;
+}
+
+nav .logo-wraper,nav .link-wraper{
+    align-items: center;
+}
+
+body{
+    font-family: sans-serif;
+    flex-direction: column;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-image: linear-gradient(to bottom, #fff 20%, rgba(50,206,213,0.4), #32CED5, #8FC982, #FBAE49);
+}
+
+nav,main{
+    width: 100%;
+}
+
+/*
+  ==== loading ====
+*/
+section#loading{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 200;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+section#loading img{
+    width: 200px;
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: .5;
+  }
+}
+
+/* ==================== Navbar ==================== */
+nav{
+    box-shadow: 0 1px 4px 0 rgba(74,74,78,.30);
+    justify-content: space-between;
+}
+.logo-wraper,.link-wraper{
+    padding: 16px 34px 16px 34px;
+}
+.logo-wraper #img-logo{
+    width: 24px;
+    margin-right: 6px;
+}
+.logo-wraper span{
+    font-size: 30px;
+    background: linear-gradient(to right, #32CED5, #8FC982, #FBAE49);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.link-wraper{
+    /*background: blue;*/
+}
+.link-wraper a{
+    font-size: 13px;
+    text-decoration: none;
+    color: black;
+    opacity: 0.8;
+}
+.link-wraper a:nth-child(1),.link-wraper a:nth-child(2){
+    display: block;
+    padding: 4px 18px 4px 18px;
+    border-right: 1.4px solid rgba(0,0,0,0.3);
+}
+.link-wraper a:nth-child(3){
+    display: block;
+    padding: 4px 0px 4px 14px;
+}
+.link-wraper a:hover{
+    opacity: 1;
+    background: linear-gradient(to right, #32CED5, #8FC982, #FBAE49);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+section#tombol-wraper{
+    padding: 0 34px;
+    margin-top: 50px;
+    display: flex;
+    justify-content: flex-start;
+}
+div.btn-out1{
+    max-width: max-content;
+    flex: 1;
+/*    margin-left: 18px;*/
+    padding: 2px;
+    background: linear-gradient(to right, #32CED5, #8FC982, #E7C634);
+    border-radius: 2px;
+    box-shadow: 1px 1px 4px 0px rgba(50, 206, 213,0.3);
+}
+div.btn-out1 div{
+    width: max-content;
+    background: rgba(255,255,255,1);
+}
+div.btn-out1 div div{
+    width: max-content;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    padding: 12px 28px;
+    letter-spacing: 1px;
+    background: white;
+    background: linear-gradient(to right, #32CED5, #8FC982, #E7C634);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+ div.btn-out1 div div:hover{
+    background: linear-gradient(to right, #32CED5, #8FC982, #E7C634);
+    -webkit-text-fill-color: white;
+}
+
+/* ==================== Table Produk ==================== */
+section#produk-wraper{
+    padding: 0 34px;
+    margin-top: 20px;
+}
+.card-produk-wraper{
+    /*background: linear-gradient(to top, #32CED5, #8FC982, #E7C634);*/
+}
+.card-produk{
+    display: flex;
+    align-items: center;
+    background-color: rgba(255,255,255,1);
+    box-sizing: border-box;
+    padding: 6px;
+    border-radius: 3px;
+    background: white;
+    border-radius: 4px;
+    overflow: hidden;
+    padding: 4px;
+    box-shadow: 2px 2px 6px 0px  rgba(0,0,0,0.3);
+    margin-top: 10px;
+}
+.card-produk img{
+    width: 240px;
+    height:240px;
+    border-radius: 4px;
+    padding: 6px;
+    border: 1px solid rgba(0,0,0,0.2);
+    opacity: 0.8;
+}
+#deskripsi1-wraper{
+    width: max-content;
+    padding: 0px 40px;
+    width: 240px;
+    box-sizing: border-box;
+}
+#deskripsi1-wraper h3{
+    text-transform: capitalize;
+    font-size: 16px;
+    font-weight: lighter;
+    opacity: 0.8;
+}
+#deskripsi1-wraper p{
+    font-size: 18px;
+    margin-top: 4px;
+    font-weight: bolder;
+    margin-bottom: 18px;
+    opacity: 0.8;
+}
+#deskripsi2-wraper{
+    flex: 1;
+    padding: 0px 40px;
+    opacity: 0.8;
+    height: 92%;
+    overflow: auto;
+    background-color: gainsboro;
+    border-radius: 4px;
+}
+#deskripsi2-wraper h3{
+    text-transform: capitalize;
+    font-size: 16px;
+    font-weight: lighter;
+    padding: 26px 0px 0 0;
+    opacity: 0.8;
+}
+#deskripsi2-wraper .main{
+    font-size: 16px;
+    margin-top: 20px;
+    margin-bottom: 18px;
+}
+#action-wraper{
+    padding: 20px 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#action-wraper a,#action-wraper a{
+    text-decoration: none;
+    background: gainsboro;
+    padding: 12px 12px;
+    letter-spacing: 2px;
+    border-radius: 4px;
+    display: block;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 14px;
+    opacity: 0.8;
+    font-weight: 600;
+}
+#action-wraper a:nth-child(1){
+    border: 2px solid #198754;
+    color: #198754;
+}
+#action-wraper a:nth-child(1):hover{
+    background: #198754;
+    color: gainsboro;
+}
+#action-wraper a:nth-child(2){
+    border: 2px solid #dc3545;
+    color: #dc3545;
+}
+#action-wraper a:nth-child(2):hover{
+    background: #dc3545;
+    color: gainsboro;
+}
+
+/* ==================== Modals ==================== */
+#modals-container,#modals-setting{
+    opacity: 0;
+    z-index: -1;
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.7);
+    box-sizing: border-box;
+    overflow: hidden;
+    padding: 40px 20px;
+}
+#modals-container.active,#modals-setting.active{
+    opacity: 1;
+    z-index: 100;
+}
+#form-add-prod,#form-profile{
+    position: relative;
+    background: white;
+    width: 500px;
+    height: 100%;
+    overflow: auto;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    transform: scale(0.9);
+    transition: all 0.3s;
+}
+#form-add-prod.active,#form-profile.active{
+    transform: scale(1);
+}
+#form-add-prod h1,#form-profile h1{
+    text-align: center;
+    text-transform: capitalize;
+    letter-spacing: 1px;
+    padding: 12px 0;
+    box-shadow: 0 1px 4px 0 rgba(74,74,78,.30);
+    background: white;
+    background: linear-gradient(to right, #32CED5, #8FC982, #E7C634);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+#wraper{
+    padding: 30px 24px;
+    flex: 1;
+    overflow: auto;
+}
+#img-wraper{
+    width: 200px;
+    height: 200px;
+    opacity: 0.8;
+    box-sizing: border-box;
+}
+#ava-wraper{
+    width: 100%;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    opacity: 0.8;
+    box-sizing: border-box;
+}
+#img-wraper img{
+    border-radius: 4px;
+    padding: 6px;
+    border: 1px solid rgba(0,0,0,0.2);
+}
+#ava-wraper img{
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    box-shadow: 0 1px 4px 0 rgba(74,74,78,.30);
+}
+#img-wraper p,#ava-wraper p{
+    text-align: center;
+    margin-top: 4px;
+    font-size: 12px;
+}
+#wraper input{
+    display: block;
+    outline: none;
+}
+#wraper input[type=file]{
+    margin-top: 44px;
+    font-size: 16px;
+    cursor: pointer;
+}
+#wraper input[type=text],select,#wraper textarea{
+    font-size: 14px;
+    padding: 10px;
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid rgba(0,0,0,0.2);
+    border-radius: 4px;
+}
+#wraper input[name=namaproduk]{
+    margin-top: 30px;
+}
+#wraper input[name=hargaproduk],#wraper input,#wraper select,#wraper textarea{
+    margin-top: 16px;
+}
+#form-profile input[type=file]{
+    margin-top: 16px;
+    margin-bottom: 36px;
+}
+#form-profile input[type=text]{
+    margin-top: 8px;
+}
+#form-profile h3{
+    margin-top: 16px;
+    opacity: 0.7;
+}
+#wraper a#hrefTips{
+    color: black;
+    opacity: 0.7;
+    display: block;
+    margin-top: 6px;
+    width: max-content;
+}
+#wraper a#hrefTips:hover,#wraper a#hrefTips:focus{
+    opacity: 1;
+    background: linear-gradient(to right, #32CED5, #8FC982, #FBAE49);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-decoration: none;
+}
+#form-add-prod button,#form-profile button{
+    display: block;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 14px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 20px;
+    outline: none;
+    border: none;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: white;
+    background: linear-gradient(to right, #32CED5, #8FC982, #E7C634);
+    opacity: 0.8;
+}
+#form-add-prod button:hover,#form-profile button:hover{
+    opacity: 1;
+}
+
+/* ==================== Footer ==================== */
+footer{
+    padding: 0 34px 40px 34px;
+    margin-top: 160px;
+}
+footer #logo-login{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 20px;
+    border-bottom: 1px solid white;
+}
+footer #footer-logo{
+    display: flex;
+    align-items: center;
+    font-size: 56px;
+    color: rgba(255,255,255,0.7);
+}
+footer #footer-logo img{
+    width: 40px;
+    margin-right: 10px;
+}
+footer .footer-login{
+    padding: 12px 28px;
+    height: max-content;
+    box-shadow: 1px 1px 4px 0px rgba(0,0,0,0.3);
+    text-decoration: none;
+    border-radius: 6px;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 600;
+    border: 4px solid white;
+}
+footer .footer-login:hover{
+    background: rgba(231,198,52,0.9);
+}
+footer h1{
+    color: rgba(255,255,255);
+    font-size: 16px;
+    margin-top: 10px;
+    font-weight: 400;
+    letter-spacing: 1px;
+}
+
+

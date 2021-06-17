@@ -1,0 +1,504 @@
+
+/*
+  ==== css ====
+*/
+*{
+    margin: 0;
+    padding: 0;
+}
+html,body{
+    height: 100vh;
+    overflow-x: hidden;
+}
+body{
+    flex-direction: column;
+    font-family: sans-serif;
+    background-image: linear-gradient(to bottom, #fff 20%, rgba(50,206,213,0.4), #32CED5, #8FC982, #E7C634);
+}
+
+/*
+  ==== loading ====
+*/
+section#loading{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 200;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+section#loading img{
+    width: 200px;
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: .5;
+  }
+}
+
+/*============================
+   <<== Display Flex ==>> 
+============================*/
+body,nav,#kategori-wraper,
+#etalase-saya,div#login-wraper,
+a#login,a#create-account,
+main .card,.card #img-wraper,
+.card span div div,#pagination,
+footer #logo-login,footer #footer-logo{
+    display: flex;
+}
+
+/*============================
+   <<== Display Block ==>> 
+============================*/
+#kategori-wraper span,.card span,
+#pagination span.wraper,#pagination span span{
+    display: block;
+}
+
+/*============================
+   <<== Box Sizing ==>> 
+============================*/
+nav,#input-wraper,#etalase-saya,div#foto-profile,
+div#login-wraper,a#login,main,main .card,.card #img-wraper{
+    box-sizing: border-box;
+}
+
+/*============================
+   <<== Opacity 0.7 ==>> 
+============================*/
+#kategori-wraper span,a#login img,a#create-account{
+    opacity: 0.7;
+}
+
+/*============================
+   <<== Width 100% ==>> 
+============================*/
+nav,#input-wraper,#kategori-wraper,#keyword,
+a#login,header,main,main .card,.card #img-wraper,
+.card span div,.card span div div,footer #logo-login{
+    width: 100%;
+}
+
+/*============================
+   <<== Height 100% ==>> 
+============================*/
+header .glide__track,header .glide__slides,header .glide__slide img,
+main .card,.card span div,.card span div div{
+    height: 100%;
+}
+
+/*=============================| NAV |=============================*/
+nav{
+    padding: 24px 34px 10px 34px;
+}
+#logo{
+    width: 62px;
+    margin-right: 50px;
+}
+#keyword-kategori {
+    flex: 1;
+}
+#input-wraper{
+    background: linear-gradient(to right, #32CED5, #8FC982, #E7C634);
+    padding: 3px;
+    border-radius: 6px;
+    position: relative;
+    overflow: hidden;
+}
+#keyword{
+    padding: 8px 12px;
+    border-radius: 3px;
+    border: none;
+    box-sizing: border-box;
+    outline: none;
+}
+#input-wraper button{
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 40px;
+    background-color: #E7C634;
+    color: white;
+    outline: none;
+    border: none;
+    padding: 11px;
+    cursor: pointer;
+    box-sizing: border-box;
+    opacity: 0.9;
+}
+#input-wraper button:hover{
+    opacity: 1;
+}
+#kategori-wraper a{
+    cursor: pointer;
+    margin: 9px 18px 0 0;
+    font-size: 12px;
+    font-weight: 600;
+    color: #000;
+    opacity: 0.8;
+    text-decoration: none;
+}
+#kategori-wraper a:hover{
+    opacity: 1;
+    background: linear-gradient(to right, #32CED5, #8FC982, #E7C634);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+#kategori-wraper a.active{
+    opacity: 1;
+    background: linear-gradient(to right, #32CED5, #8FC982, #E7C634);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+#etalase-saya{
+    margin-left: 50px;
+    text-decoration: none;
+    text-transform: capitalize;
+    letter-spacing: 1px;
+    color: rgba(0,0,0,0.7);
+    align-items: center;
+    height: 40px;
+    padding: 10px 7px;
+    border-radius: 3px;
+    font-size: 13px;
+    position: relative;
+    z-index: 100;
+    overflow: hidden;
+}
+#etalase-saya.active{
+    overflow: visible;
+}
+#etalase-saya:hover{
+    /*background: linear-gradient(to right, rgba(50,206,213), rgba(143,201,130), rgba(231,198,52));*/
+    background-color: rgba(0,0,0,0.08);
+}
+#etalase-saya:hover > span{
+    background: linear-gradient(to right, #32CED5, #8FC982, #E7C634);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+div#bg-etalase{
+    background-color: rgba(0,0,0,0.4);
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+div#bg-etalase.active{
+    bottom: 0px;
+    right: 0;
+    z-index: 90;
+}
+#etalase-saya span{
+    cursor: pointer;
+}
+div#foto-profile{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: linear-gradient(to right, rgba(50,206,213,0.7), rgba(143,201,130,0.7), rgba(231,198,52,0.7));
+    margin-left: 10px;
+    cursor: pointer;
+    overflow: hidden;
+}
+div#foto-profile img{
+    widht:100%;
+    height: 100%;
+}
+div#login-wraper{
+    left: 0;
+    right: 0;
+    bottom: -100px;
+    height: 90px;
+    border-radius: 3px;
+    padding: 6px;
+    flex-direction: column;
+    align-items: center;
+    background: linear-gradient(to right, rgba(50,206,213), rgba(143,201,130), rgba(231,198,52));
+    box-shadow: 0 0 12px 2px rgba(50,206,213,0.4);
+    position: absolute;
+    z-index: 100;
+}
+a#login{
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 1px 1px 4px 0px rgba(0,0,0,0.3);
+    background: rgba(231,198,52,0.9);
+    height: 40px;
+    border-radius: 2px;
+    text-decoration: none;
+    color: rgba(0,0,0,0.7);
+    padding: 0 12px;
+    font-size: 22px;
+}
+a#login:hover{
+    background: rgba(231,198,62,1);
+    color: rgba(0,0,0,1);
+}
+a#login img{
+    width: 24px;
+}
+a#create-account{
+    flex: 1;
+    align-items: center;
+    color: rgba(0,0,0,0.7);
+    text-transform: lowercase;
+    font-weight: 600;
+}
+a#create-account:hover{
+    color: white;
+}
+
+/*=============================| HEADER BANNER |=============================*/
+header{
+    height: 300px;
+    margin-top: 20px;
+    padding: 0 70px;
+}
+header .glide__track,
+header .glide__slides{
+    border-radius: 10px;
+    box-shadow: 2px 2px 6px 0px  rgba(0,0,0,0.3);
+}
+header .glide__slide img{
+    border-radius: 10px;
+}
+
+/*=============================| MAIN CARD |=============================*/
+main{
+    flex: 1;
+    margin-top: 40px;
+    padding: 0 70px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 1.8rem;
+}
+main .card{
+    flex-direction: column;
+    background-color: white;
+    border-radius: 3px;
+    box-shadow: 2px 2px 6px 0px  rgba(0,0,0,0.3);
+    overflow: hidden;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+    position: relative;
+}
+.card #img-wraper{
+    /*padding: 10px;*/
+    align-items: center;
+    justify-content: center;
+}
+.card #img-wraper #img-bg{
+    width: 100%;
+}
+.card span{
+    flex: 1;
+    margin: 4px;
+    padding: 2px;
+    background: linear-gradient(to right, #32CED5, #8FC982, #E7C634);
+    border-radius: 2px;
+    box-sizing: border-box;
+}
+.card span div{
+    background-color: white;
+}
+.card span div div{
+    text-align: center;
+    align-items: center;
+    padding: 10px;
+    box-sizing: border-box;
+    justify-content: center;
+    background: linear-gradient(to right, #32CED5, #8FC982, #E7C634);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.card span div div:hover{
+    background: linear-gradient(to right, #32CED5, #8FC982, #E7C634);
+    -webkit-text-fill-color: white;
+}
+.card #harga{
+    position: absolute;
+    z-index: 20;
+    top: 0;
+    right: 0;
+    background: linear-gradient(to right, #32CED5, #8FC982, #E7C634);
+    padding: 4px 8px;
+    color: white;
+    text-transform: capitalize;
+}
+
+/*=============================| Pagination |=============================*/
+#pagination{
+    margin-top: 90px;
+    justify-content: center;
+}
+#pagination a.wraper{
+    background-color: white;
+    margin: 0 8px;
+    border-radius: 3px;
+    overflow: hidden;
+    box-shadow: 2px 2px 6px 0px  rgba(0,0,0,0.3);
+    transition: all 0.1s;
+    text-decoration: none;
+    padding: 12px 12px;
+}
+#pagination a.wraper:hover{
+    transform: scale(1.1);
+}
+#pagination a span{
+    font-weight: 700;
+    cursor: pointer;
+    background: linear-gradient(to right, #32CED5, #8FC982, #E7C634);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/*=============================| Modals |=============================*/
+#modals-container{
+    opacity: 0;
+    z-index: -1;
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.7);
+    box-sizing: border-box;
+    overflow: hidden;
+    padding: 40px 20px;
+}
+#modals-container.active{
+    opacity: 1;
+    z-index: 100;
+}
+#form-add-prod{
+    position: relative;
+    background: white;
+    width: 500px;
+    height: 100%;
+    overflow: auto;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    transform: scale(0.9);
+    transition: all 0.3s;
+}
+#form-add-prod.active{
+    transform: scale(1);
+}
+#form-add-prod h1{
+    text-align: center;
+    text-transform: capitalize;
+    letter-spacing: 1px;
+    padding: 12px 0;
+    box-shadow: 0 1px 4px 0 rgba(74,74,78,.30);
+    background: white;
+    background: linear-gradient(to right, #32CED5, #8FC982, #E7C634);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+#wraper{
+    padding: 0;
+    flex: 1;
+    overflow: auto;
+}
+#wraper input{
+    display: block;
+    outline: none;
+}
+#wraper h3{
+    opacity: 0.8;
+    text-transform: capitalize;
+}
+#wraper input[type=text],select,#wraper div#textarea{
+    font-size: 14px;
+    padding: 10px;
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid rgba(0,0,0,0.2);
+    border-radius: 4px;
+}
+#wraper input,#wraper div#textarea{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+div#textarea{
+    min-height: 300px;
+    color: rgb(109,109,109);
+    background-color: rgb(227,227,227);
+}
+#form-add-prod button{
+    display: block;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 14px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 20px;
+    outline: none;
+    border: none;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: white;
+    background: linear-gradient(to right, #32CED5, #8FC982, #E7C634);
+    opacity: 0.8;
+}
+#form-add-prod button:hover{
+    opacity: 1;
+}
+
+/*=============================| Footer |=============================*/
+footer{
+    padding: 0 70px 40px 70px;
+    margin-top: 100px;
+}
+footer #logo-login{
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 20px;
+    border-bottom: 1px solid white;
+}
+footer #footer-logo{
+    align-items: center;
+    font-size: 56px;
+    color: rgba(255,255,255,0.7);
+}
+footer #footer-logo img{
+    width: 40px;
+    margin-right: 10px;
+}
+footer .footer-login{
+    padding: 12px 28px;
+    height: max-content;
+    box-shadow: 1px 1px 4px 0px rgba(0,0,0,0.3);
+    text-decoration: none;
+    border-radius: 6px;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 600;
+    border: 4px solid white;
+}
+footer .footer-login:hover{
+    background: rgba(231,198,52,0.9);
+}
+footer h1{
+    color: rgba(255,255,255);
+    font-size: 16px;
+    margin-top: 10px;
+    font-weight: 400;
+    letter-spacing: 1px;
+}

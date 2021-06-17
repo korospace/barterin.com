@@ -1,0 +1,201 @@
+/*
+  ==== css ====
+*/
+*{
+    margin: 0;
+    padding: 0;
+}
+html,body{
+    height: 100vh;
+    overflow-x: hidden;
+}
+body{
+    flex-direction: column;
+    font-family: sans-serif;
+    background-image: linear-gradient(to bottom, #fff 20%, rgba(50,206,213,0.4), #32CED5, #8FC982, #E7C634);
+}
+
+/*============================
+   <<== Display Flex ==>> 
+============================*/
+body,nav,#kategori-wraper,a#beranda,
+#etalase-saya,div#login-wraper,
+a#login,a#create-account{
+    display: flex;
+}
+
+/*============================
+   <<== Display Block ==>> 
+============================*/
+#kategori-wraper span{
+    display: block;
+}
+
+/*============================
+   <<== Box Sizing ==>> 
+============================*/
+nav,#input-wraper,a#beranda,#etalase-saya,div#foto-profile,
+div#login-wraper,a#login{
+    box-sizing: border-box;
+}
+
+/*============================
+   <<== Opacity 0.7 ==>> 
+============================*/
+#kategori-wraper span,a#login img,a#create-account,a#beranda{
+    opacity: 0.7;
+}
+
+/*============================
+   <<== Width 100% ==>> 
+============================*/
+nav,#input-wraper,#kategori-wraper,input#keyword{
+    width: 100%;
+}
+
+/*=============================| NAV |=============================*/
+nav{
+    padding: 24px 34px 10px 34px;
+}
+#logo{
+    width: 62px;
+    margin-right: 50px;
+}
+#keyword-kategori {
+    flex: 1;
+}
+#input-wraper{
+    background: linear-gradient(to right, #32CED5, #8FC982, #E7C634);
+    padding: 3px 27px 3px 3px;
+    border-radius: 6px;
+}
+input#keyword{
+    padding: 8px 12px;
+    border-radius: 3px;
+    border: none;
+}
+#kategori-wraper span{
+    cursor: pointer;
+    margin: 9px 18px 0 0;
+    font-size: 12px;
+    font-weight: 600;
+    color: #000;
+}
+#kategori-wraper span:hover{
+    opacity: 1;
+    background: linear-gradient(to right, #32CED5, #8FC982, #E7C634);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+a#beranda{
+    align-items: center;
+    text-decoration: none;
+    color: black;
+    height: 40px;
+    font-size: 13px;    
+    letter-spacing: 1px;
+    margin-left: 50px;
+    margin-right: 18px;
+    padding: 4px 18px 4px 0;
+    border-right: 1.4px solid rgba(0,0,0,.3);
+}
+a#beranda:hover{
+    opacity: 1;
+    background: linear-gradient(to right, #32CED5, #8FC982, #E7C634);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+#etalase-saya{
+    text-decoration: none;
+    text-transform: capitalize;
+    letter-spacing: 1px;
+    color: rgba(0,0,0,0.7);
+    align-items: center;
+    height: 40px;
+    padding: 10px 7px;
+    border-radius: 3px;
+    font-size: 13px;
+    position: relative;
+    z-index: 100;
+    overflow: hidden;
+}
+#etalase-saya.active{
+    overflow: visible;
+}
+#etalase-saya:hover{
+    /*background: linear-gradient(to right, rgba(50,206,213), rgba(143,201,130), rgba(231,198,52));*/
+    background-color: rgba(0,0,0,0.08);
+}
+#etalase-saya:hover > span{
+    background: linear-gradient(to right, #32CED5, #8FC982, #E7C634);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+div#bg-etalase{
+    background-color: rgba(0,0,0,0.4);
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+div#bg-etalase.active{
+    bottom: 0px;
+    right: 0;
+    z-index: 90;
+}
+#etalase-saya span{
+    cursor: pointer;
+}
+div#foto-profile{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: linear-gradient(to right, rgba(50,206,213,0.7), rgba(143,201,130,0.7), rgba(231,198,52,0.7));
+    margin-left: 10px;
+    padding: 5px;
+    cursor: pointer;
+}
+div#login-wraper{
+    left: 0;
+    right: 0;
+    bottom: -100px;
+    height: 90px;
+    border-radius: 3px;
+    padding: 6px;
+    flex-direction: column;
+    align-items: center;
+    background: linear-gradient(to right, rgba(50,206,213), rgba(143,201,130), rgba(231,198,52));
+    box-shadow: 0 0 12px 2px rgba(50,206,213,0.4);
+    position: absolute;
+    z-index: 100;
+}
+a#login{
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 1px 1px 4px 0px rgba(0,0,0,0.3);
+    background: rgba(231,198,52,0.9);
+    height: 40px;
+    border-radius: 2px;
+    text-decoration: none;
+    color: rgba(0,0,0,0.7);
+    padding: 0 12px;
+    font-size: 22px;
+}
+a#login:hover{
+    background: rgba(231,198,62,1);
+    color: rgba(0,0,0,1);
+}
+a#login img{
+    width: 24px;
+}
+a#create-account{
+    flex: 1;
+    align-items: center;
+    color: rgba(0,0,0,0.7);
+    text-transform: lowercase;
+    font-weight: 600;
+}
+a#create-account:hover{
+    color: white;
+}
+
+/*=============================| HEADER BANNER |=============================*/
